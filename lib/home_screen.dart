@@ -1,6 +1,8 @@
 import 'package:core_concepts/components/my_button.dart';
 import 'package:core_concepts/constantColor.dart';
 import 'package:flutter/material.dart';
+import 'package:math_expressions/math_expressions.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -13,6 +15,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
+  // state
   var userInput = '';
   var answer = '';
 
@@ -31,12 +34,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+
+
                     children: [
-                      Text(
-                        userInput.toString(),
-                        style: const TextStyle(
-                            fontSize: 30,
-                            color: whiteColor),),
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: Text(
+                          userInput.toString(),
+                          style: const TextStyle(
+                              fontSize: 30,
+                              color: whiteColor),),
+                      ),
+
+                      const SizedBox(height: 15,),
+
                       Text(
                         answer.toString(),
                         style: const TextStyle(
@@ -238,12 +251,22 @@ class _HomeScreenState extends State<HomeScreen> {
 
                         MyButton(
                           title: 'DEL',
-                          onPress: (){},),
+                          onPress: (){
+                            userInput = userInput.substring(0, userInput.length - 1);
+                            setState(() {
+                              
+                            });
+                          },),
 
                         MyButton(
                           title: '=',
                           color: Color(0xffffa00a),
-                          onPress: (){},),
+                          onPress: (){
+                            equalPress();
+                            setState(() {
+
+                            });
+                          },),
                       ],
                     ),
                   ],
@@ -254,6 +277,22 @@ class _HomeScreenState extends State<HomeScreen> {
         )
       ),
     );
+  }
+
+
+  // function for equal button
+  void equalPress(){
+
+    String finalUserInput = userInput;
+    finalUserInput = userInput.replaceAll('x', '*');
+
+    Parser p = Parser();
+    Expression expression = p.parse(finalUserInput);
+    ContextModel contextModel = ContextModel();
+
+    double eval = expression.evaluate(EvaluationType.REAL, contextModel);
+    answer = eval.toString();
+
   }
 }
 
