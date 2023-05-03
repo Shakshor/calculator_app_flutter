@@ -58,43 +58,82 @@ class _HomeScreenState extends State<HomeScreen> {
                     Row(
                       children:  [
                         MyButton(title: 'AC', onPress: (){
-                          print('tap');
+                          userInput = '';
+                          answer = '';
+                          setState(() {
+
+                          });
                         },),
 
                         MyButton(
                           title: '+/-',
-                          onPress: (){},),
+                          onPress: (){
+                            userInput += '+/-';
+                            setState(() {
+
+                            });
+                          },),
 
                         MyButton(
                           title: '%',
-                          onPress: (){},),
+                          onPress: (){
+                            userInput += '%';
+                            setState(() {
+
+                            });
+                          },),
 
                         MyButton(
                           title: '/',
                           color: Color(0xffffa00a),
-                          onPress: (){},),
+                          onPress: (){
+                            userInput += '/';
+                            setState(() {
+
+                            });
+                          },),
                       ],
                     ),
 
                     // second row
                     Row(
                       children:  [
-                        MyButton(title: '7', onPress: (){
-                          print('tap');
+                        MyButton(
+                          title: '7',
+                          onPress: (){
+                            userInput += '7';
+                              setState(() {
+
+                                });
                         },),
 
                         MyButton(
                           title: '8',
-                          onPress: (){},),
+                          onPress: (){
+                            userInput += '8';
+                            setState(() {
+
+                            });
+                          },),
 
                         MyButton(
                           title: '9',
-                          onPress: (){},),
+                          onPress: (){
+                            userInput += '9';
+                            setState(() {
+
+                            });
+                          },),
 
                         MyButton(
-                          title: '*',
+                          title: 'x',
                           color: Color(0xffffa00a),
-                          onPress: (){},),
+                          onPress: (){
+                            userInput += 'x';
+                            setState(() {
+
+                            });
+                          },),
                       ],
                     ),
 
@@ -102,21 +141,39 @@ class _HomeScreenState extends State<HomeScreen> {
                     Row(
                       children:  [
                         MyButton(title: '4', onPress: (){
-                          print('tap');
+                          userInput += '4';
+                          setState(() {
+
+                          });
                         },),
 
                         MyButton(
                           title: '5',
-                          onPress: (){},),
+                          onPress: (){
+                            userInput += '5';
+                            setState(() {
+
+                            });
+                          },),
 
                         MyButton(
                           title: '6',
-                          onPress: (){},),
+                          onPress: (){
+                            userInput += '6';
+                            setState(() {
+
+                            });
+                          },),
 
                         MyButton(
                           title: '-',
                           color: Color(0xffffa00a),
-                          onPress: (){},),
+                          onPress: (){
+                            userInput += '-';
+                            setState(() {
+
+                            });
+                          },),
                       ],
                     ),
 
@@ -124,21 +181,39 @@ class _HomeScreenState extends State<HomeScreen> {
                     Row(
                       children:  [
                         MyButton(title: '1', onPress: (){
-                          print('tap');
+                          userInput += '1';
+                          setState(() {
+
+                          });
                         },),
 
                         MyButton(
                           title: '2',
-                          onPress: (){},),
+                          onPress: (){
+                            userInput += '2';
+                            setState(() {
+
+                            });
+                          },),
 
                         MyButton(
                           title: '3',
-                          onPress: (){},),
+                          onPress: (){
+                            userInput += '3';
+                            setState(() {
+
+                            });
+                          },),
 
                         MyButton(
                           title: '+',
                           color: Color(0xffffa00a),
-                          onPress: (){},),
+                          onPress: (){
+                            userInput += '+';
+                            setState(() {
+
+                            });
+                          },),
                       ],
                     ),
 
@@ -146,12 +221,20 @@ class _HomeScreenState extends State<HomeScreen> {
                     Row(
                       children:  [
                         MyButton(title: '0', onPress: (){
-                          print('tap');
+                          userInput += '0';
+                          setState(() {
+
+                          });
                         },),
 
                         MyButton(
                           title: '.',
-                          onPress: (){},),
+                          onPress: (){
+                            userInput += '.';
+                            setState(() {
+
+                            });
+                          },),
 
                         MyButton(
                           title: 'DEL',
